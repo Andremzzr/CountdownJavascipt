@@ -1,0 +1,22 @@
+*{
+    font-family: sans-serif;
+}
+.container{
+    text-align: center;
+}
+button{
+    background: #069;
+    color: white;
+    font-size: 32px;
+    padding: 8px 20px;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.display-number{
+    font-size: 40px;
+}
