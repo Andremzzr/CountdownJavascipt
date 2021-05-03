@@ -3,6 +3,7 @@ var display = document.getElementById('display');
 var minutes = document.getElementById('minutos');
 var seconds = document.getElementById('segundos');
 
+
 var start = document.getElementById('start');
 
 var countdownSeconds;
@@ -24,9 +25,12 @@ for (let i = 1; i <= 60; i++) {
     
 }
 
+
+
 start.addEventListener('click',function(){
     minutesNow = minutes.value;
     secondsNow = seconds.value;
+    
 
      //  VERIFYING THE SECONDS DISPLAY
      if (secondsNow < 10) {
@@ -44,22 +48,31 @@ start.addEventListener('click',function(){
         minutesToDisplay = minutesNow;
     }
 
+
+
     display.childNodes[1].innerHTML = minutesToDisplay + ":" + secondsToDisplay;
+
 
     interval = setInterval(function(){
         
         secondsNow--;   
         if (secondsNow <= 0 ) {
+            
             if (minutesNow > 0 ) {
+                
+                
                 minutesNow--;
                 secondsNow = 59;
             }
             else{
-                alert("Acabou");
                 document.getElementById('sound').play();
+                alert("Seu tempo acabou")
                 clearInterval(interval);
             }
         }
+
+
+
             //  VERIFYING THE SECONDS DISPLAY
             if (secondsNow < 10) {
                 secondsToDisplay = '0'+secondsNow;
@@ -75,6 +88,8 @@ start.addEventListener('click',function(){
             else{
                 minutesToDisplay = minutesNow;
             }
+
+           
 
         display.childNodes[1].innerHTML = minutesToDisplay + ":" + secondsToDisplay;
     },1000);
